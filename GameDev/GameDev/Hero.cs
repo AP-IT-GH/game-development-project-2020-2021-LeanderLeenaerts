@@ -27,9 +27,9 @@ namespace GameDev
             animation.AddFrame(new AnimationFrame(new Rectangle(1701, 556, 2268, 1112)));
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            animation.Update();
+            animation.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch) 

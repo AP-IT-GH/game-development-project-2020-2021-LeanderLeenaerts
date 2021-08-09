@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,6 +12,7 @@ namespace GameDev.Animations
         private List<AnimationFrame> frames;
 
         private int counter;
+        private double frameMovement = 0;
 
         public Animation()
         {
@@ -23,10 +25,16 @@ namespace GameDev.Animations
             CurrentFrame = frames[0];
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             CurrentFrame = frames[counter];
-            counter++;
+
+            frameMovement += CurrentFrame.SourceRectangle.Width * gameTime.ElapsedGameTime.TotalSeconds;
+            if (frameMovement >= CurrentFrame.SourceRectangle.Width/10)                                                          // Change the devided by number to change draw speed
+            {
+                counter++;
+                frameMovement = 0;
+            }
 
             if (counter >= frames.Count) 
             {
