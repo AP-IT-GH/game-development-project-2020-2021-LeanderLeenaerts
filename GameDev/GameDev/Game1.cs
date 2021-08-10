@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GameDev.Commands;
+using GameDev.Input;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -42,7 +44,7 @@ namespace GameDev
 
         private void InitializeGameObjects()
         {
-            hero = new Hero(texture);
+            hero = new Hero(texture, new KeyboardReader(), new MoveCommand()) ;                                                                 // DIP => Hier geef je de eigenlijke input mee
         }
 
         protected override void Update(GameTime gameTime)
