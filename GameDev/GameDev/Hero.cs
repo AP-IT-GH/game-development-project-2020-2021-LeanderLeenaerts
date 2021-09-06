@@ -57,7 +57,8 @@ namespace GameDev
 
         public void Draw(SpriteBatch spriteBatch) 
         {
-            spriteBatch.Draw(heroTexture, Position, animation.CurrentFrame.SourceRectangle, Color.White);                                           //Texture, Position, rectangle, Color (not used)
+            spriteBatch.Draw(heroTexture, Position, animation.CurrentFrame.SourceRectangle, Color.White,0,new Vector2(0,0),new Vector2(0.5f,0.5f),SpriteEffects.None,0);                                           //Texture, Position, rectangle, Color (not used)
+            //spriteBatch.Draw(heroTexture, Position, animation.CurrentFrame.SourceRectangle, Color.White);
         }
     }
 }

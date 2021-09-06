@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using Levels.Level;
 
 namespace GameDev
 {
@@ -12,8 +13,10 @@ namespace GameDev
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+
         private Texture2D texture;
         Hero hero;
+        Level level;
 
         public Game1()
         {
@@ -26,7 +29,8 @@ namespace GameDev
         {
             // TODO: Add your initialization logic here
 
-            
+            level = new Level(Content);
+            level.CreateWorld();
 
             base.Initialize();
         }
@@ -45,6 +49,11 @@ namespace GameDev
         private void InitializeGameObjects()
         {
             hero = new Hero(texture, new KeyboardReader(), new MoveCommand()) ;                                                                 // DIP => Hier geef je de eigenlijke input mee
+
+            _graphics.PreferredBackBufferWidth = 1100; //width
+            _graphics.PreferredBackBufferHeight = 900; //height
+            _graphics.ApplyChanges();
+            Window.AllowUserResizing = true;
         }
 
         protected override void Update(GameTime gameTime)
@@ -67,6 +76,7 @@ namespace GameDev
 
             _spriteBatch.Begin();                                                                                               //Draw between begin and end
 
+            level.DrawWorld(_spriteBatch);
             hero.Draw(_spriteBatch);
 
             _spriteBatch.End();

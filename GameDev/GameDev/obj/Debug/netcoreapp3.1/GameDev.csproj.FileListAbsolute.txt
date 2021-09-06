@@ -35,3 +35,4 @@ C:\Users\leand\Desktop\game-development-project-2020-2021-LeanderLeenaerts\GameD
 C:\Users\leand\Desktop\game-development-project-2020-2021-LeanderLeenaerts\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.pdb
 C:\Users\leand\Desktop\game-development-project-2020-2021-LeanderLeenaerts\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.genruntimeconfig.cache
 C:\Users\leand\Desktop\game-development-project-2020-2021-LeanderLeenaerts\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Run.xnb
+C:\Users\leand\Desktop\game-development-project-2020-2021-LeanderLeenaerts\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\blok.xnb

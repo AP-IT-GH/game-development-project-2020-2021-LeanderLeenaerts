@@ -4,9 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/leand/Desktop/game-development-project-2020-2021-LeanderLeenaerts/GameDev/GameDev/Content/blok.png</File>
     <File>C:/Users/leand/Desktop/game-development-project-2020-2021-LeanderLeenaerts/GameDev/GameDev/Content/Run.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
