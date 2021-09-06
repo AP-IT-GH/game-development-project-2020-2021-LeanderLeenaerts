@@ -19,7 +19,11 @@ namespace GameDev
 
         public Vector2 Position { get; set; }
 
-        private IGameCommand moveCommand;
+        public IGameCommand moveCommand;
+
+        public Rectangle CollisionRectangle { get; set; }
+        private Rectangle _collisionRectangle;
+        
 
         //Constructor
         //texture = sprite 
@@ -41,6 +45,9 @@ namespace GameDev
 
             this.inputReader = reader;
             this.moveCommand = command;
+
+            //_collisionRectangle = new Rectangle((int)Position.X, (int)Position.Y, 567, 556);
+            _collisionRectangle = new Rectangle((int)Position.X, (int)Position.Y, 284, 273);
         }
 
         public void Update(GameTime gameTime)
@@ -48,6 +55,9 @@ namespace GameDev
             var direction = inputReader.ReadInput();                                                                                            //Read input from chosen device (chosen when initiated by Game1)
             Move(direction);                                                                                                                    //Calls Move method 
             animation.Update(gameTime);                                                                                                         // Update animations through animation class
+            _collisionRectangle.X = (int)Position.X; ;
+            _collisionRectangle.Y = (int)Position.Y;
+            CollisionRectangle = _collisionRectangle;
         }
 
         private void Move(Vector2 _direction)

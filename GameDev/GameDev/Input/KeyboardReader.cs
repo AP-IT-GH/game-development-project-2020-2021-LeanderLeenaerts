@@ -22,6 +22,14 @@ namespace GameDev.Input
             {
                 direction = new Vector2(1, 0);
             }
+            if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.Z))
+            {
+                direction = new Vector2(0, -1);
+            }
+            if (state.IsKeyDown(Keys.Down) || state.IsKeyDown(Keys.S))
+            {
+                direction = new Vector2(0, 1);
+            }
             return direction;
         }
     }

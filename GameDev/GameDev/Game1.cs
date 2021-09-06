@@ -5,6 +5,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using Levels.Level;
+using GameDev.CollisionDetection;
+using System.Diagnostics;
 
 namespace GameDev
 {
@@ -15,8 +17,9 @@ namespace GameDev
 
 
         private Texture2D texture;
-        Hero hero;
-        Level level;
+        public Hero hero;
+        public Level level;
+        public CollisionManager cManager;
 
         public Game1()
         {
@@ -31,7 +34,7 @@ namespace GameDev
 
             level = new Level(Content);
             level.CreateWorld();
-
+            cManager = new CollisionManager();
             base.Initialize();
         }
 
@@ -64,8 +67,36 @@ namespace GameDev
             // TODO: Add your update logic here
 
             hero.Update(gameTime);
+            var temp = hero.Position;
 
-            base.Update(gameTime);
+            //Problem: Hero position is updated in Itransform so when we call Hero.position it return the starting position
+            //!!Can be used as reset!!
+            for (int x = 0; x < 9; x++)                                                                                                           //Test with CollisionManager
+            {                                                                                                                                     
+               for (int y = 0; y < 6; y++)
+                {
+                    if (level.tileArray[x, y] == 1)
+                    {
+                            if (cManager.CheckCollision(hero.CollisionRectangle, level.blokArray[x,y].CollisionRectangle))          
+                            {
+                                Debug.WriteLine("Collision: - "+x+" - "+y);
+
+                                //"reset" happens here
+                                //temp -= new Vector2(temp.X-1, temp.Y-1);                                                                                   
+                                //hero.Position = temp;
+                            
+                            }
+                    }
+
+                }
+            }
+
+
+
+
+
+
+                base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)

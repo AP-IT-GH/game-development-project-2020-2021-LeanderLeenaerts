@@ -8,5 +8,6 @@ namespace GameDev.Interfaces
     public interface ITransform                     //Used in moving a object
     {
         Vector2 Position { get; set; }
+        
     }
 }

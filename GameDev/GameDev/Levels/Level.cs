@@ -17,18 +17,18 @@ namespace Levels.Level
 
         public byte[,] tileArray = new Byte[,]                                                                             //Array for positions
         {
-            {0,0,0,0,0,0 },
-            {0,0,0,0,0,0 },
-            {0,0,0,0,0,0 },
-            {0,0,0,0,0,0 },
-            {0,0,0,0,0,0 },
-            {0,0,0,0,0,0 },
-            {0,0,0,0,0,0 },
-            {0,0,0,0,0,0 },
+            {0,0,0,0,0,1 },
+            {0,0,0,0,0,1 },
+            {0,0,0,0,0,1 },
+            {0,0,0,0,0,1 },
+            {0,0,0,0,0,1 },
+            {0,0,0,0,0,1 },
+            {0,0,0,0,0,1 },
+            {0,0,0,0,0,1 },
             {1,1,1,1,1,1 },
         };
 
-        private Blok[,] blokArray = new Blok[9, 6];                                                                       //For use of different blocks
+        public Blok[,] blokArray = new Blok[9, 6];                                                                       //For use of different blocks
 
         private ContentManager content;
 
